@@ -1,10 +1,9 @@
 package utils
 
 import (
-"fmt"
-"time"
-
-"github.com/BurntSushi/toml"
+	"fmt"
+	"github.com/BurntSushi/toml"
+	"time"
 )
 
 type tomlConfig struct {
@@ -59,4 +58,3 @@ func main() {
 	fmt.Printf("Client data: %v\n", config.Clients.Data)
 	fmt.Printf("Client hosts: %v\n", config.Clients.Hosts)
 }
-
