@@ -1,4 +1,4 @@
-package utils
+package main
 
 import (
 	"fmt"
@@ -9,14 +9,14 @@ import (
 type tomlConfig struct {
 	Title   string
 	Owner   ownerInfo
-	DB      database `toml:"database"`
+	DB      database
 	Servers map[string]server
 	Clients clients
 }
 
 type ownerInfo struct {
 	Name string
-	Org  string `toml:"organization"`
+	Org  string
 	Bio  string
 	DOB  time.Time
 }
@@ -24,7 +24,7 @@ type ownerInfo struct {
 type database struct {
 	Server  string
 	Ports   []int
-	ConnMax int `toml:"connection_max"`
+	ConnMax int
 	Enabled bool
 }
 
@@ -40,7 +40,7 @@ type clients struct {
 
 func main() {
 	var config tomlConfig
-	if _, err := toml.DecodeFile("example.toml", &config); err != nil {
+	if _, err := toml.DecodeFile("/Users/njcx/go/src/rule_engine_by_go/src/utils/config.toml", &config); err != nil {
 		fmt.Println(err)
 		return
 	}
