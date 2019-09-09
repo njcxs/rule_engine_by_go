@@ -1,9 +1,8 @@
-package utils
-
+package email
 
 import (
-	"strings"
 	"github.com/go-gomail/gomail"
+	"strings"
 )
 
 type EmailParam struct {
@@ -77,4 +76,3 @@ func SendEmail(subject, body string) {
 		panic(err)
 	}
 }
-
