@@ -1,12 +1,24 @@
 title = "TOML Example"
 
-[kafka-input]
-server = "192.168.1.1"
-ports = [ 8001, 8001, 8002 ]
+[input]
+
+    [kafka.input]
+    enabled = true
+    server = "192.168.1.1"
+    ports = [ 8001, 8001, 8002 ]
+
+    [rabbitmq.input]
+    enabled = true
+    server = "192.168.1.1"
+    ports = [ 8001, 8001, 8002 ]
+
+    [redis.input]
+    enabled = true
+    server = "192.168.1.1"
+    ports = [ 8001, 8001, 8002 ]
 
 
 [output]
-
 
     [output.email]
     enabled = true
@@ -25,13 +37,20 @@ ports = [ 8001, 8001, 8002 ]
     ip = "10.0.0.1"
     dc = "eqdc10"
 
-
     [output.es]
     enabled = true
     es_host=["10.10.1.2:9200", "10.10.1.3:9200"]
 
     [output.json]
     enabled = true
+
+    [output.redis]
+    enabled = true
+
+    [output.rabbitmq]
+    enabled = true
+
+
 
 
 
