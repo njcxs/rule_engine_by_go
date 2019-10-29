@@ -94,6 +94,19 @@
   version = "v0.8.1"
 
 [[projects]]
+  digest = "1:4ea0a2c140de99df93e8526871f424f39a97d2d80a5c1f83350db1226bd14cd4"
+  name = "github.com/rs/zerolog"
+  packages = [
+    ".",
+    "internal/cbor",
+    "internal/json",
+    "log",
+  ]
+  pruneopts = "UT"
+  revision = "7592fcbe604741a8d6044390c09d70c01569e1b3"
+  version = "v1.16.0"
+
+[[projects]]
   branch = "master"
   digest = "1:3df46e572883257c46c470dc1796f9bc609d0d0d7339dd10358030649b9beb93"
   name = "github.com/streadway/amqp"
@@ -119,6 +132,8 @@
     "github.com/gomodule/redigo/redis",
     "github.com/json-iterator/go",
     "github.com/olivere/elastic",
+    "github.com/rs/zerolog",
+    "github.com/rs/zerolog/log",
     "github.com/streadway/amqp",
   ]
   solver-name = "gps-cdcl"
