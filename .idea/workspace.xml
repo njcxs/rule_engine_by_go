@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7325faa0-9f1a-47b5-8b13-02f1652b2baa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/utils/redis/redis.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/redis/redis.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,42 +13,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/github.com/gomodule/redigo/redis/doc.go">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/github.com/gomodule/redigo/redis/conn.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-15284">
-              <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
-              <folding>
-                <element signature="e#602#722#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/github.com/gomodule/redigo/redis/pool17.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-342" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/github.com/gomodule/redigo/redis/pubsub.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2670">
-              <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
-              <folding>
-                <element signature="e#602#630#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/github.com/gomodule/redigo/redis/redis.go">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
@@ -56,8 +20,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/github.com/gomodule/redigo/redis/reply.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2177">
-              <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+            <state>
+              <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
               <folding>
                 <element signature="e#602#640#0" expanded="true" />
               </folding>
@@ -68,8 +32,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/github.com/gomodule/redigo/redis/scan.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-8398">
-              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+            <state>
+              <caret line="32" selection-start-line="32" selection-end-line="32" />
               <folding>
                 <element signature="e#602#670#0" expanded="true" />
               </folding>
@@ -82,11 +46,56 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils/redis/redis.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-9140">
-              <caret line="125" column="31" lean-forward="true" selection-start-line="125" selection-start-column="31" selection-end-line="125" selection-end-column="31" />
+            <state relative-caret-position="-1795">
+              <caret line="125" column="31" selection-start-line="125" selection-start-column="31" selection-end-line="125" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utils/es/es.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="6" selection-end-column="10" />
+              <folding>
+                <element signature="e#12#106#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/utils/es/elastic5.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-860">
+              <caret column="10" selection-start-column="10" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utils/es/elastic6.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="10" selection-start-column="10" selection-end-column="10" />
+              <folding>
+                <element signature="e#11#130#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utils/es/elastic7.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2280">
+              <caret line="95" lean-forward="true" selection-start-line="95" selection-end-line="95" />
+              <folding>
+                <element signature="e#23#144#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -94,7 +103,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/github.com/gomodule/redigo/redis/pool.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
+            <state>
               <caret line="177" column="17" selection-start-line="177" selection-start-column="17" selection-end-line="177" selection-end-column="17" />
             </state>
           </provider>
@@ -155,12 +164,14 @@
         <option value="$PROJECT_DIR$/utils/kafka/producer.go" />
         <option value="$PROJECT_DIR$/utils/kafka/consumer.go" />
         <option value="$PROJECT_DIR$/utils/redis/redis.go" />
+        <option value="$PROJECT_DIR$/utils/es/elastic5.go" />
+        <option value="$PROJECT_DIR$/utils/es/elastic6.go" />
+        <option value="$PROJECT_DIR$/utils/es/elastic7.go" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-1920" />
-    <option name="y" value="-44" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="y" value="23" />
     <option name="width" value="1920" />
     <option name="height" value="1005" />
   </component>
@@ -237,50 +248,6 @@
               <item name="utils" type="462c0819:PsiDirectoryNode" />
               <item name="redis" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="rule_engine_by_go" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rule_engine_by_go" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rule_engine_by_go" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rule_engine_by_go" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
-              <item name="github.com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rule_engine_by_go" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rule_engine_by_go" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
-              <item name="github.com" type="462c0819:PsiDirectoryNode" />
-              <item name="gomodule" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rule_engine_by_go" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rule_engine_by_go" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
-              <item name="github.com" type="462c0819:PsiDirectoryNode" />
-              <item name="gomodule" type="462c0819:PsiDirectoryNode" />
-              <item name="redigo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rule_engine_by_go" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rule_engine_by_go" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
-              <item name="github.com" type="462c0819:PsiDirectoryNode" />
-              <item name="gomodule" type="462c0819:PsiDirectoryNode" />
-              <item name="redigo" type="462c0819:PsiDirectoryNode" />
-              <item name="redis" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rule_engine_by_go" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="rule_engine_by_go" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Go SDK 1.12.5" type="20ee2d1f:SyntheticLibraryElementNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -294,10 +261,11 @@
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.vendoring.notification.had.been.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -367,10 +335,10 @@
     </recent_temporary>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1920" y="-44" width="1920" height="1005" extended-state="0" />
+    <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21618743" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16282764" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -385,12 +353,12 @@
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.10733844" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="right" id="Word Book" side_tool="true" />
-      <window_info anchor="right" id="Translate" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="Translate" order="4" />
+      <window_info anchor="right" id="Word Book" order="5" side_tool="true" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -401,33 +369,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="nm" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/utils/mq/rabbitmq.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4776">
-          <caret line="204" column="9" selection-start-line="204" selection-start-column="9" selection-end-line="204" selection-end-column="9" />
-          <folding>
-            <element signature="e#12#74#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/etc/rule_engin.toml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1392">
-          <caret line="58" selection-start-line="58" selection-end-line="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/configure_get.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1344">
-          <caret line="60" selection-start-line="60" selection-end-line="60" />
-          <folding>
-            <element signature="e#15#70#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/utils/json/json.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
@@ -439,13 +380,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="80" selection-start-column="78" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/es/es.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -528,49 +462,15 @@
     <entry file="file://$PROJECT_DIR$/vendor/github.com/rs/zerolog/hook.go">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file:///usr/local/Cellar/go/1.12.5/libexec/src/os/exec/lp_js.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="21" column="17" lean-forward="true" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
-          <folding>
-            <element signature="e#193#213#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/Cellar/go/1.12.5/libexec/src/os/exec/exec.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="22" column="7" lean-forward="true" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
-          <folding>
-            <element signature="e#1064#1185#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/Cellar/go/1.12.5/libexec/src/image/testdata/video-001.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file:///usr/local/Cellar/go/1.12.5/libexec/src/image/testdata/video-001.progressive.truncated.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file:///usr/local/Cellar/go/1.12.5/libexec/src/image/testdata/video-005.gray.q50.progressive.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file:///usr/local/Cellar/go/1.12.5/libexec/src/image/testdata/video-005.gray.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file:///usr/local/Cellar/go/1.12.5/libexec/src/image/testdata/video-001.rgb.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file:///usr/local/Cellar/go/1.12.5/libexec/src/math/atan_s390x.s">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2522" />
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/Cellar/go/1.12.5/libexec/src/math/hypot_amd64.s">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file:///usr/local/Cellar/go/1.12.5/libexec/src/os/exec/lp_js.go" />
+    <entry file="file:///usr/local/Cellar/go/1.12.5/libexec/src/os/exec/exec.go" />
+    <entry file="file:///usr/local/Cellar/go/1.12.5/libexec/src/image/testdata/video-001.jpeg" />
+    <entry file="file:///usr/local/Cellar/go/1.12.5/libexec/src/image/testdata/video-001.progressive.truncated.jpeg" />
+    <entry file="file:///usr/local/Cellar/go/1.12.5/libexec/src/image/testdata/video-005.gray.q50.progressive.jpeg" />
+    <entry file="file:///usr/local/Cellar/go/1.12.5/libexec/src/image/testdata/video-005.gray.png" />
+    <entry file="file:///usr/local/Cellar/go/1.12.5/libexec/src/image/testdata/video-001.rgb.png" />
+    <entry file="file:///usr/local/Cellar/go/1.12.5/libexec/src/math/atan_s390x.s" />
+    <entry file="file:///usr/local/Cellar/go/1.12.5/libexec/src/math/hypot_amd64.s" />
     <entry file="file://$PROJECT_DIR$/vendor/github.com/streadway/amqp/fuzz.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -578,21 +478,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/Cellar/go/1.12.5/libexec/src/unsafe/unsafe.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4296" />
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/Cellar/go/1.12.5/libexec/src/log/log.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3338">
-          <caret line="35" column="7" lean-forward="true" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
-          <folding>
-            <element signature="e#842#898#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///usr/local/Cellar/go/1.12.5/libexec/src/unsafe/unsafe.go" />
+    <entry file="file:///usr/local/Cellar/go/1.12.5/libexec/src/log/log.go" />
     <entry file="file://$PROJECT_DIR$/main.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -603,13 +490,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/20191104.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="2" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/20191104.txt" />
     <entry file="file://$PROJECT_DIR$/utils/log/log.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="576">
@@ -620,16 +501,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/errors.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.log">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/errors.log" />
+    <entry file="file://$PROJECT_DIR$/test.log" />
     <entry file="file://$PROJECT_DIR$/test.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="376">
@@ -686,8 +559,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/github.com/gomodule/redigo/redis/conn.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-15284">
-          <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+        <state>
+          <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
           <folding>
             <element signature="e#602#722#0" expanded="true" />
           </folding>
@@ -695,14 +568,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/github.com/gomodule/redigo/redis/pool17.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-342" />
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/github.com/gomodule/redigo/redis/pubsub.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2670">
-          <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+        <state>
+          <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
           <folding>
             <element signature="e#602#630#0" expanded="true" />
           </folding>
@@ -714,8 +585,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/github.com/gomodule/redigo/redis/reply.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2177">
-          <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+        <state>
+          <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
           <folding>
             <element signature="e#602#640#0" expanded="true" />
           </folding>
@@ -724,8 +595,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/github.com/gomodule/redigo/redis/scan.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8398">
-          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        <state>
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
           <folding>
             <element signature="e#602#670#0" expanded="true" />
           </folding>
@@ -737,15 +608,52 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/github.com/gomodule/redigo/redis/pool.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
+        <state>
           <caret line="177" column="17" selection-start-line="177" selection-start-column="17" selection-end-line="177" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/utils/redis/redis.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9140">
-          <caret line="125" column="31" lean-forward="true" selection-start-line="125" selection-start-column="31" selection-end-line="125" selection-end-column="31" />
+        <state relative-caret-position="-1795">
+          <caret line="125" column="31" selection-start-line="125" selection-start-column="31" selection-end-line="125" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/es/es.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="6" selection-end-column="10" />
+          <folding>
+            <element signature="e#12#106#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/es/elastic7.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2280">
+          <caret line="95" lean-forward="true" selection-start-line="95" selection-end-line="95" />
+          <folding>
+            <element signature="e#23#144#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/es/elastic6.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="10" selection-start-column="10" selection-end-column="10" />
+          <folding>
+            <element signature="e#11#130#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/es/elastic5.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-860">
+          <caret column="10" selection-start-column="10" selection-end-column="10" />
         </state>
       </provider>
     </entry>
