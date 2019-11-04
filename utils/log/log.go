@@ -1,30 +1,25 @@
 package log
 
 import (
-	"flag"
-
-	"github.com/rs/zerolog"
-	"github.com/rs/zerolog/log"
+	"io"
+	"log"
+	"os"
 )
 
-func main() {
-	zerolog.TimeFieldFormat = zerolog.TimeFormatUnix
-	debug := flag.Bool("debug", false, "sets log level to debug")
+var (
+	Info *log.Logger
+	Warning *log.Logger
+	Error * log.Logger
+)
 
-	flag.Parse()
-
-	// Default level for this example is info, unless debug flag is present
-	zerolog.SetGlobalLevel(zerolog.InfoLevel)
-	if *debug {
-		zerolog.SetGlobalLevel(zerolog.DebugLevel)
+func init(){
+	errFile,err:=os.OpenFile("errors.log",os.O_CREATE|os.O_WRONLY|os.O_APPEND,0666)
+	if err!=nil{
+		log.Fatalln("打开日志文件失败：",err)
 	}
 
-	log.Debug().Msg("This message appears only when log level set to Debug")
-	log.Info().Msg("This message appears when log level set to Debug or Info")
+	Info = log.New(io.MultiWriter(os.Stdout,errFile),"Info:",log.Ldate | log.Ltime | log.Lshortfile)
+	Warning = log.New(io.MultiWriter(os.Stdout,errFile),"Warning:",log.Ldate | log.Ltime | log.Lshortfile)
+	Error = log.New(io.MultiWriter(os.Stderr,errFile),"Error:",log.Ldate | log.Ltime | log.Lshortfile)
 
-	if e := log.Debug(); e.Enabled() {
-		// Compute log output only if enabled.
-		value := "bar"
-		e.Str("foo", value).Msg("some debug message")
-	}
 }
