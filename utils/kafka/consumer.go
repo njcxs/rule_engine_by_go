@@ -32,9 +32,6 @@ func CreateConsumerCluster(kafkaAddrs []string, kafkaGroup string) *kafka.Consum
 type LogConsumer struct {
 	kafkaConsumer *kafka.Consumer
 	AppLogs       chan *kafka.Message
-	BuildLogs     chan *kafka.Message
-	WebLogs       chan *kafka.Message
-	IstioWebLogs  chan *kafka.Message
 	IsOpen        bool
 	address       []string
 	group         string
@@ -66,12 +63,6 @@ func (lc *LogConsumer) runPooler() {
 		case *kafka.Message:
 			if strings.HasPrefix(*msg.TopicPartition.Topic, "_") == true {
 				continue
-			} else if *msg.TopicPartition.Topic == "alamoweblogs" {
-				lc.WebLogs <- msg
-			} else if *msg.TopicPartition.Topic == "istio-access-logs" {
-				lc.IstioWebLogs <- msg
-			} else if *msg.TopicPartition.Topic == "alamobuildlogs" {
-				lc.BuildLogs <- msg
 			} else {
 				lc.AppLogs <- msg
 			}
@@ -127,9 +118,6 @@ func (lc *LogConsumer) Open() error {
 		log.Println("Error listening to all topics", err)
 	}
 	lc.AppLogs = make(chan *kafka.Message)
-	lc.BuildLogs = make(chan *kafka.Message)
-	lc.WebLogs = make(chan *kafka.Message)
-	lc.IstioWebLogs = make(chan *kafka.Message)
 	lc.IsOpen = true
 	go lc.runPooler()
 	return nil

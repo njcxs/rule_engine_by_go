@@ -1,6 +1,5 @@
 package redis
 
-
 import (
 	"errors"
 	"fmt"
@@ -14,21 +13,19 @@ import (
 
 // Cacher 先构建一个Cacher实例，然后将配置参数传入该实例的StartAndGC方法来初始化实例和程序进程退出后的清理工作。
 type Cacher struct {
-	pool      *redis.Pool
-	prefix    string
-
+	pool   *redis.Pool
+	prefix string
 }
 
 // Options redis配置参数
 type Options struct {
-	Network     string                                 // 通讯协议，默认为 tcp
-	Addr        string                                 // redis服务的地址，默认为 127.0.0.1:6379
-	Password    string                                 // redis鉴权密码
-	Db          int                                    // 数据库
-	MaxActive   int                                    // 最大活动连接数，值为0时表示不限制
-	MaxIdle     int                                    // 最大空闲连接数
-	IdleTimeout int                                    // 空闲连接的超时时间，超过该时间则关闭连接。单位为秒。默认值是5分钟。值为0时表示不关闭空闲连接。此值应该总是大于redis服务的超时时间。
-
+	Network     string // 通讯协议，默认为 tcp
+	Addr        string // redis服务的地址，默认为 127.0.0.1:6379
+	Password    string // redis鉴权密码
+	Db          int    // 数据库
+	MaxActive   int    // 最大活动连接数，值为0时表示不限制
+	MaxIdle     int    // 最大空闲连接数
+	IdleTimeout int    // 空闲连接的超时时间，超过该时间则关闭连接。单位为秒。默认值是5分钟。值为0时表示不关闭空闲连接。此值应该总是大于redis服务的超时时间。
 
 }
 
@@ -92,7 +89,6 @@ func (c *Cacher) StartAndGC(options interface{}) error {
 		return errors.New("Unsupported options")
 	}
 }
-
 
 // GetString 获取string类型的键值
 func (c *Cacher) GetString(key string) (string, error) {
@@ -183,7 +179,6 @@ func (c *Cacher) DecrBy(key string, amount int64) (val int64, err error) {
 	return Int64(c.Do("DECRBY", c.getKey(key), amount))
 }
 
-
 func (c *Cacher) HMSet(key string, val interface{}, expire int) (err error) {
 	conn := c.pool.Get()
 	defer conn.Close()
@@ -245,8 +240,6 @@ func (c *Cacher) HGetBool(key, field string) (reply bool, err error) {
 	reply, err = Bool(c.HGet(key, field))
 	return
 }
-
-
 
 // HGetAll HGetAll("key", &val)
 func (c *Cacher) HGetAll(key string, val interface{}) error {
@@ -456,8 +449,6 @@ Redis 有序集合和集合一样也是string类型元素的集合,且不允许�
 集合是通过哈希表实现的，所以添加，删除，查找的复杂度都是O(1)。
 **/
 
-
-
 /**
 Redis 发布订阅(pub/sub)是一种消息通信模式：发送者(pub)发送消息，订阅者(sub)接收消息。
 Redis 客户端可以订阅任意数量的频道。
@@ -511,7 +502,6 @@ func (c *Cacher) Subscribe(onMessage func(channel string, data []byte) error, ch
 	}()
 	return err
 }
-
 
 // closePool 程序进程退出时关闭连接池
 func (c *Cacher) closePool() {
