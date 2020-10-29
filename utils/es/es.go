@@ -1,138 +1,130 @@
 package es
 
-
 import (
-	"context"
+	"errors"
 	"fmt"
-	"k8s.io/klog"
 	"time"
-
-	elastic7 "github.com/olivere/elastic/v7"
-	"github.com/pborman/uuid"
 )
 
-type Elastic7Wrapper struct {
-	client        *elastic7.Client
-	pipeline      string
-	bulkProcessor *elastic7.BulkProcessor
+const (
+	ESIndex = "nids"
+)
+
+type UnsupportedVersion struct{}
+
+func (UnsupportedVersion) Error() string {
+	return "Unsupported ElasticSearch Client Version"
 }
 
-func NewEsClient7(config ElasticConfig, bulkWorkers int, pipeline string) (*Elastic7Wrapper, error) {
-	var startupFns []elastic7.ClientOptionFunc
+type elasticWrapper interface {
+	IndexExists(indices ...string) (bool, error)
+	CreateIndex(name string) (bool, error)
+	AddAlias(index string, alias string) (bool, error)
+	HasAlias(index string, alias string) (bool, error)
+	AddBulkReq(index, typeName string, data interface{}) error
+	FlushBulk() error
+}
 
-	if len(config.Url) > 0 {
-		startupFns = append(startupFns, elastic7.SetURL(config.Url...))
+type ElasticConfig struct {
+	Url         []string
+	User        string
+	Secret      string
+	MaxRetries  *int
+	HealthCheck *bool
+	Timeout     *time.Duration
+	Sniff       *bool
+}
+
+type ElasticSearchService struct {
+	EsClient  elasticWrapper
+	baseIndex string
+}
+
+func (esSvc *ElasticSearchService) Index(date time.Time, namespace string) string {
+	dateStr := date.Format("2006.01.02")
+	if len(namespace) > 0 {
+		return fmt.Sprintf("%s-%s-%s", esSvc.baseIndex, namespace, dateStr)
+	}
+	return fmt.Sprintf("%s-%s", esSvc.baseIndex, dateStr)
+}
+
+func (esSvc *ElasticSearchService) IndexAlias(typeName string) string {
+	return fmt.Sprintf("%s-%s", esSvc.baseIndex, typeName)
+}
+
+func (esSvc *ElasticSearchService) FlushData() error {
+	return esSvc.EsClient.FlushBulk()
+}
+
+// SaveDataIntoES save metrics and events to ES by using ES client
+func (esSvc *ElasticSearchService) SaveData(date time.Time, typeName string, namespace string, sinkData []interface{}) error {
+	if typeName == "" || len(sinkData) == 0 {
+		return nil
 	}
 
-	if config.User != "" && config.Secret != "" {
-		startupFns = append(startupFns, elastic7.SetBasicAuth(config.User, config.Secret))
-	}
+	indexName := esSvc.Index(date, namespace)
 
-	if config.MaxRetries != nil {
-		startupFns = append(startupFns, elastic7.SetMaxRetries(*config.MaxRetries))
-	}
-
-	if config.HealthCheck != nil {
-		startupFns = append(startupFns, elastic7.SetHealthcheck(*config.HealthCheck))
-	}
-
-	if config.HealthCheck != nil {
-		startupFns = append(startupFns, elastic7.SetHealthcheck(*config.HealthCheck))
-	}
-
-	if config.Timeout != nil {
-		startupFns = append(startupFns, elastic7.SetHealthcheckTimeoutStartup(*config.Timeout))
-	}
-
-	if config.HttpClient != nil {
-		startupFns = append(startupFns, elastic7.SetHttpClient(config.HttpClient))
-	}
-
-	if config.Sniff != nil {
-		startupFns = append(startupFns, elastic7.SetSniff(*config.Sniff))
-	}
-
-	client, err := elastic7.NewClient(startupFns...)
+	// Use the IndexExists service to check if a specified index exists.
+	exists, err := esSvc.EsClient.IndexExists(indexName)
 	if err != nil {
-		return nil, fmt.Errorf("failed to an ElasticSearch Client: %v", err)
+		return err
 	}
-	bps, err := client.BulkProcessor().
-		Name("ElasticSearchWorker").
-		Workers(bulkWorkers).
-		After(bulkAfterCBV7).
-		BulkActions(1000).               // commit if # requests >= 1000
-		BulkSize(2 << 20).               // commit if size of requests >= 2 MB
-		FlushInterval(10 * time.Second). // commit every 10s
-		Do(context.Background())
+
+	if !exists {
+
+		ack, err := esSvc.EsClient.CreateIndex(indexName)
+		if err != nil {
+			return err
+		}
+		if !ack {
+			return errors.New("Failed to acknoledge index creation")
+		}
+	}
+
+	aliasName := esSvc.IndexAlias(typeName)
+
+	hasAlias, err := esSvc.EsClient.HasAlias(indexName, aliasName)
 	if err != nil {
-		return nil, fmt.Errorf("failed to an ElasticSearch Bulk Processor: %v", err)
+		return err
 	}
 
-	return &Elastic7Wrapper{client: client, bulkProcessor: bps, pipeline: pipeline}, nil
-}
+	if !hasAlias {
+		ack, err := esSvc.EsClient.AddAlias(indexName, esSvc.IndexAlias(typeName))
+		if err != nil {
+			return err
+		}
 
-func (es *Elastic7Wrapper) IndexExists(indices ...string) (bool, error) {
-	return es.client.IndexExists(indices...).Do(context.Background())
-}
-
-func (es *Elastic7Wrapper) CreateIndex(name string, mapping string) (bool, error) {
-	res, err := es.client.CreateIndex(name).Do(context.Background())
-	if err != nil {
-		return false, err
-	}
-	return res.Acknowledged, err
-}
-
-func (es *Elastic7Wrapper) getAliases(index string) (*elastic7.AliasesResult, error) {
-	return es.client.Aliases().Index(index).Do(context.Background())
-}
-
-func (es *Elastic7Wrapper) AddAlias(index string, alias string) (bool, error) {
-	res, err := es.client.Alias().Add(index, alias).Do(context.Background())
-	if err != nil {
-		return false, err
-	}
-	return res.Acknowledged, err
-}
-
-func (es *Elastic7Wrapper) HasAlias(indexName string, aliasName string) (bool, error) {
-	aliases, err := es.getAliases(indexName)
-	if err != nil {
-		return false, err
-	}
-	return aliases.Indices[indexName].HasAlias(aliasName), nil
-}
-
-func (es *Elastic7Wrapper) AddBulkReq(index, typeName string, data interface{}) error {
-	req := elastic7.NewBulkIndexRequest().
-		Index(index).
-		Type(typeName).
-		Id(uuid.NewUUID().String()).
-		Doc(data)
-	if es.pipeline != "" {
-		req.Pipeline(es.pipeline)
+		if !ack {
+			return errors.New("Failed to acknoledge index alias creation")
+		}
 	}
 
-	es.bulkProcessor.Add(req)
+	for _, data := range sinkData {
+		esSvc.EsClient.AddBulkReq(indexName, typeName, data)
+	}
+
 	return nil
 }
 
-func (es *Elastic7Wrapper) FlushBulk() error {
-	return es.bulkProcessor.Flush()
-}
+func CreateElasticSearchService(config ElasticConfig, version int) (*ElasticSearchService, error) {
 
-func bulkAfterCBV7(_ int64, _ []elastic7.BulkableRequest, response *elastic7.BulkResponse, err error) {
+	var esSvc ElasticSearchService
+	esSvc.baseIndex = ESIndex
+
+	bulkWorkers := 5
+	pipeline := ""
+
+	switch version {
+	case 6:
+		esSvc.EsClient, err = NewEsClient6(config, bulkWorkers, pipeline)
+	case 7:
+		esSvc.EsClient, err = NewEsClient7(config, bulkWorkers, pipeline)
+	default:
+		return nil, UnsupportedVersion{}
+	}
 	if err != nil {
-		klog.Warningf("Failed to execute bulk operation to ElasticSearch: %v", err)
+		return nil, fmt.Errorf("Failed to create ElasticSearch client: %v", err)
 	}
 
-	if response.Errors {
-		for _, list := range response.Items {
-			for name, itm := range list {
-				if itm.Error != nil {
-					klog.V(3).Infof("Failed to execute bulk operation to ElasticSearch on %s: %v", name, itm.Error)
-				}
-			}
-		}
-	}
+	return &esSvc, nil
 }

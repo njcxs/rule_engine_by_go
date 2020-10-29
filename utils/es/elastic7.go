@@ -3,11 +3,9 @@ package es
 import (
 	"context"
 	"fmt"
-	"k8s.io/klog"
-	"time"
-
 	elastic7 "github.com/olivere/elastic/v7"
 	"github.com/pborman/uuid"
+	"time"
 )
 
 type Elastic7Wrapper struct {
@@ -74,7 +72,7 @@ func (es *Elastic7Wrapper) IndexExists(indices ...string) (bool, error) {
 	return es.client.IndexExists(indices...).Do(context.Background())
 }
 
-func (es *Elastic7Wrapper) CreateIndex(name string, mapping string) (bool, error) {
+func (es *Elastic7Wrapper) CreateIndex(name string) (bool, error) {
 	res, err := es.client.CreateIndex(name).Do(context.Background())
 	if err != nil {
 		return false, err
@@ -122,14 +120,14 @@ func (es *Elastic7Wrapper) FlushBulk() error {
 
 func bulkAfterCBV7(_ int64, _ []elastic7.BulkableRequest, response *elastic7.BulkResponse, err error) {
 	if err != nil {
-		klog.Warningf("Failed to execute bulk operation to ElasticSearch: %v", err)
+		fmt.Println("Failed to execute bulk operation to ElasticSearch: %v", err)
 	}
 
 	if response.Errors {
 		for _, list := range response.Items {
 			for name, itm := range list {
 				if itm.Error != nil {
-					klog.V(3).Infof("Failed to execute bulk operation to ElasticSearch on %s: %v", name, itm.Error)
+					fmt.Println("Failed to execute bulk operation to ElasticSearch on %s: %v", name, itm.Error)
 				}
 			}
 		}
