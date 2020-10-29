@@ -2,9 +2,10 @@ state: enable
 rule_id : sqli_get_01
 rule_tag: sqli
 rule_name: sqli_get_select
-rule_type: and
+rule_type:  frequency_or   # frequency_and
 
 detect_list:
+
   - field : network.ip
     type: re
     rule: xxx
@@ -17,6 +18,12 @@ detect_list:
     type: in
     rule : 100
 
+key : xxx
+
+time_interval:
+   second: 10
+   times: 100
+
 
 threat_level : high
 auth : njcx
@@ -25,4 +32,3 @@ info": "about sql injection attack"
 e-mail:
     - xxx
     - xxx
-
