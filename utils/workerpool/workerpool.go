@@ -21,6 +21,7 @@ func (w Worker) Run(wq chan chan Job) {
 	go func() {
 		for {
 			wq <- w.JobQueue
+
 			select {
 			case job := <-w.JobQueue:
 				//fmt.Println("job.do....")
@@ -44,6 +45,7 @@ func NewWorkerPool(workerlen int) *WorkerPool {
 		WorkerQueue: make(chan chan Job, workerlen),
 	}
 }
+
 func (wp *WorkerPool) Run() {
 	fmt.Println("初始化worker")
 	//初始化worker
@@ -56,7 +58,6 @@ func (wp *WorkerPool) Run() {
 		for {
 			select {
 			case job := <-wp.JobQueue:
-				fmt.Println("循环获取可用的worker,往worker中写job")
 				worker := <-wp.WorkerQueue
 				worker <- job
 			}

@@ -29,6 +29,7 @@ func main() {
 	// debug.SetMaxThreads(num + 1000) //设置最大线程数
 	// 注册工作池，传入任务
 	// 参数1 worker并发个数
+
 	p := conc.NewWorkerPool(num)
 	p.Run()
 
