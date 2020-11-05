@@ -11,17 +11,22 @@ type inPut struct {
 type outPut struct {
 }
 
-type reConfig struct {
-	Env     string
-	LogPath string
-	input   inPut
-	output  outPut
+type Config struct {
+	env     string
+	logpath string
 }
 
-func init() {
+type reConfig struct {
+	config Config
+	input  inPut
+	output outPut
+}
 
-	var config reConfig
-	if _, err := toml.DecodeFile(GetCurrentPath()+"/etc/config.toml", &config); err != nil {
+var ReConfig reConfig
+
+func init() {
+	fmt.Println("test")
+	if _, err := toml.DecodeFile(GetCurrentPath()+"/etc/config.toml", &ReConfig); err != nil {
 		fmt.Println(err)
 		return
 	}

@@ -1,17 +1,15 @@
-title = "rule_engine"
+name : "rule_engine"
 
-
-[config]
-    env = "dev"  # 环境 dev demo prod
-    logpath = "/var/log"
+env : "dev"  # 环境 dev demo prod
+logpath : "/var/log"
 
 
 
-[input]
-    [input.kafka]
-    enabled = true
-    server = "192.168.1.1"
-    ports = [ 8001, 8001, 8002 ]
+input:
+     kafka:
+         enabled : true
+         server : "192.168.1.1"
+         ports : [ 8001, 8001, 8002 ]
 
 #    [input.rabbitmq]
 #    enabled = true
