@@ -3,6 +3,7 @@ module rule_engine_by_go
 go 1.14
 
 require (
+	github.com/BurntSushi/toml v0.3.1
 	github.com/confluentinc/confluent-kafka-go v1.4.2
 	github.com/go-redis/redis v6.15.9+incompatible // indirect
 	github.com/google/uuid v1.1.2 // indirect
