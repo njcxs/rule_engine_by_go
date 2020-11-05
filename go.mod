@@ -8,5 +8,5 @@ require (
 	github.com/go-redis/redis v6.15.9+incompatible // indirect
 	github.com/google/uuid v1.1.2 // indirect
 	github.com/segmentio/kafka-go v0.4.5 // indirect
-	gopkg.in/yaml.v2 v2.3.0 // indirect
+	gopkg.in/yaml.v2 v2.3.0
 )

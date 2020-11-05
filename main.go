@@ -8,6 +8,7 @@ import (
 
 func main() {
 
+	config, _ := utils.GetConfig()
 	log.Info.Println("test")
-	fmt.Println(utils.ReConfig)
+	fmt.Println(config)
 }
