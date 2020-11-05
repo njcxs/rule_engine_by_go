@@ -12,57 +12,57 @@ input:
          ports : [ 8001, 8001, 8002 ]
 
 #    [input.rabbitmq]
-#    enabled = true
-#    server = "192.168.1.1"
-#    ports = [ 8001, 8001, 8002 ]
+#    enabled : true
+#    server : "192.168.1.1"
+#    ports : [ 8001, 8001, 8002 ]
 
 #    [input.redis]
-#    enabled = true
-#    server = "192.168.1.1"
-#    ports = 6379
-#    password = ""
+#    enabled : true
+#    server : "192.168.1.1"
+#    ports : 6379
+#    password : ""
 
 
 
-[output]
+output:
 
-    [output.email]
-    enabled = true
-
-    EMAIL_HOST = 'smtp.partner.outlook.cn'
-    EMAIL_SMTP_PORT = ''
-    EMAIL_SSL_PORT = ''
-    EMAIL_FROM = ''
-    EMAIL_TO = ''
-    EMAIL_USERNAME = ''
-    EMAIL_PWD = ''
-
-    [output.kafka]
-    enabled = true
-
-    ip = "10.0.0.1"
-    dc = "eqdc10"
-
-
-    [output.es]
-    enabled = true
-    es_host=["10.10.1.2:9200", "10.10.1.3:9200"]
+#    email:
+#      enabled : true
+#
+#      EMAIL_HOST : 'smtp.partner.outlook.cn'
+#      EMAIL_SMTP_PORT : ''
+#      EMAIL_SSL_PORT : ''
+#      EMAIL_FROM : ''
+#      EMAIL_TO : ''
+#      EMAIL_USERNAME : ''
+#      EMAIL_PWD : ''
+#
+#    [output.kafka]
+#    enabled : true
+#
+#    ip : "10.0.0.1"
+#    dc : "eqdc10"
 
 
-    [output.json]
-    enabled = true
-    path = ""
+   es:
+      enabled : true
+      es_host : ["10.10.1.2:9200", "10.10.1.3:9200"]
 
-
-    [output.redis]
-    enabled = true
-    server = "192.168.1.1"
-    ports = 6379
-    password = ""
-
-
-    [output.rabbitmq]
-    enabled = true
+#
+#    [output.json]
+#    enabled : true
+#    path : ""
+#
+#
+#    [output.redis]
+#    enabled : true
+#    server : "192.168.1.1"
+#    ports : 6379
+#    password : ""
+#
+#
+#    [output.rabbitmq]
+#    enabled : true
 
 
 
