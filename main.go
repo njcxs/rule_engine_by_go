@@ -10,5 +10,5 @@ func main() {
 
 	config, _ := utils.GetConfig()
 	log.Info.Println("test")
-	fmt.Println(config)
+	fmt.Println(config["input"])
 }
