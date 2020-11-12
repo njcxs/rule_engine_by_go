@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7325faa0-9f1a-47b5-8b13-02f1652b2baa" name="Default Changelist" comment="Default Changelist">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,10 +58,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rabbitmq.go" pinned="false" current-in-tab="false">
+      <file leaf-file-name="rabbitmq.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/utils/mq/rabbitmq.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4301">
+            <state relative-caret-position="4416">
               <caret line="192" column="17" selection-start-line="192" selection-start-column="17" selection-end-line="192" selection-end-column="17" />
               <folding>
                 <element signature="e#12#74#0" expanded="true" />
@@ -81,11 +79,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+            <state relative-caret-position="161">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -120,7 +118,7 @@
       <replace>:</replace>
     </replaceStrings>
   </component>
-  <component name="GOROOT" path="/usr/local/Cellar/go/1.14.4/libexec" />
+  <component name="GOROOT" path="/usr/local/Cellar/go/1.14.2_1/libexec" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -222,16 +220,6 @@
             <path>
               <item name="rule_engine_by_go" type="b2602c69:ProjectViewProjectNode" />
               <item name="rule_engine_by_go" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rule_engine_by_go" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rule_engine_by_go" type="462c0819:PsiDirectoryNode" />
-              <item name="doc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rule_engine_by_go" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rule_engine_by_go" type="462c0819:PsiDirectoryNode" />
               <item name="etc" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -243,29 +231,7 @@
             <path>
               <item name="rule_engine_by_go" type="b2602c69:ProjectViewProjectNode" />
               <item name="rule_engine_by_go" type="462c0819:PsiDirectoryNode" />
-              <item name="logs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rule_engine_by_go" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rule_engine_by_go" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rule_engine_by_go" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rule_engine_by_go" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rule_engine_by_go" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rule_engine_by_go" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-              <item name="json" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rule_engine_by_go" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rule_engine_by_go" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-              <item name="log" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="rule_engine_by_go" type="b2602c69:ProjectViewProjectNode" />
@@ -611,16 +577,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/utils/config.toml" />
-    <entry file="file://$PROJECT_DIR$/utils/mq/rabbitmq.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4301">
-          <caret line="192" column="17" selection-start-line="192" selection-start-column="17" selection-end-line="192" selection-end-column="17" />
-          <folding>
-            <element signature="e#12#74#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/1.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="591">
@@ -670,8 +626,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+        <state relative-caret-position="161">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/mq/rabbitmq.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4416">
+          <caret line="192" column="17" selection-start-line="192" selection-start-column="17" selection-end-line="192" selection-end-column="17" />
+          <folding>
+            <element signature="e#12#74#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
