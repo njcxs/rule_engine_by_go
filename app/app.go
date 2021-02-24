@@ -3,8 +3,8 @@ package app
 import (
 	"gopkg.in/yaml.v2"
 	"io/ioutil"
-	"log"
 	"rule_engine_by_go/utils"
+	log2 "rule_engine_by_go/utils/log"
 )
 
 var configFile []byte
@@ -18,7 +18,7 @@ func init() {
 	var err error
 	configFile, err = ioutil.ReadFile(utils.GetCurrentPath() + "/etc/config.yml")
 	if err != nil {
-		log.Fatalf("Get yml file err %v ", err)
+		log2.Error.Fatalf("Get yml file err %v ", err)
 	}
 
 }

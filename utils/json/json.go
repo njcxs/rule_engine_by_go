@@ -2,15 +2,14 @@ package json
 
 import (
 	jsoniter "github.com/json-iterator/go"
+	"github.com/tidwall/match"
+	"github.com/tidwall/pretty"
 	"strconv"
 	"strings"
 	"time"
 	"unicode/utf16"
 	"unicode/utf8"
 	"unsafe"
-
-	"github.com/tidwall/match"
-	"github.com/tidwall/pretty"
 )
 
 var json = jsoniter.ConfigCompatibleWithStandardLibrary
