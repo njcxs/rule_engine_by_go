@@ -15,11 +15,15 @@
 
 package main
 
-import "rule_engine_by_go/utils/json"
+import (
+	"fmt"
+	"rule_engine_by_go/app"
+)
 
-const json_ = `{"name":{"first":"Janet","last":"Prichard"},".age":47}`
+//
+//const json_ = `{"name":{"first":"Janet","last":"Prichard"},".age":47}`
 
 func main() {
-	value := json.Get(json_, "name.last")
-	println(value.String())
+	value, _ := app.GetConfig()
+	fmt.Println(value["name"])
 }

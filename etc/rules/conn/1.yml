@@ -5,10 +5,12 @@ rule_name: sqli_get_select
 rule_type: and
 
 detect_list:
+
   - field : network.ip
     type: re
     rule: xxx
     ignorecase: False
+
   - field : network.ip
     type: equal
     rule : xxx
