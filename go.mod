@@ -10,6 +10,7 @@ require (
 	github.com/gomodule/redigo v1.8.4
 	github.com/google/uuid v1.1.2 // indirect
 	github.com/json-iterator/go v1.1.10
+	github.com/patrickmn/go-cache v2.1.0+incompatible // indirect
 	github.com/segmentio/kafka-go v0.4.5 // indirect
 	github.com/tidwall/match v1.0.3
 	github.com/tidwall/pretty v1.1.0
