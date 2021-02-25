@@ -16,7 +16,7 @@ type engine struct {
 }
 
 func NewEngine(ruleType string) *engine {
-	return &engine{RuleType: ruleType}
+	return &engine{RuleType: ruleType, InPutC: make(chan string, 48), OutPutC: make(chan string, 48)}
 }
 
 func (e *engine) ReadRules() {

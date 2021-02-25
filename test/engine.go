@@ -12,7 +12,6 @@ func main() {
 
 	e := app.NewEngine("conn")
 	e.ReadRules()
-	e.InPutC = make(chan string)
 
 	kafkaConsumer := kafka.InitKakfaConsumer([]string{"172.21.129.2:9092"}, "test", []string{"nids-conn"})
 	kafkaConsumer.Open()
