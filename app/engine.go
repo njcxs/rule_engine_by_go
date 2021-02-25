@@ -8,11 +8,6 @@ import (
 	log2 "rule_engine_by_go/utils/log"
 )
 
-//var (
-//	 Output= make(chan string,48)
-//	 Input = make(chan string,48)
-//)
-
 type engine struct {
 	RuleType string
 	InPutC   chan string
@@ -51,12 +46,12 @@ func (e *engine) ReadRules() {
 
 func (e *engine) ResCheck() {
 
-	go func(c chan string) {
+	go func() {
 		for {
-			fmt.Printf(<-c)
+			fmt.Println(<-e.InPutC)
 		}
 
-	}(e.InPutC)
+	}()
 
 }
 
