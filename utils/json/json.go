@@ -1,7 +1,7 @@
 package json
 
 import (
-	jsoniter "github.com/json-iterator/go"
+	"github.com/json-iterator/go"
 	"github.com/tidwall/match"
 	"github.com/tidwall/pretty"
 	"strconv"

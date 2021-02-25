@@ -3,7 +3,7 @@ package kafka
 import (
 	"encoding/json"
 	"errors"
-	kafka "github.com/confluentinc/confluent-kafka-go/kafka"
+	"github.com/confluentinc/confluent-kafka-go/kafka"
 	"log"
 	"strings"
 	"time"
