@@ -1,6 +1,7 @@
 package app
 
 import (
+	"fmt"
 	"gopkg.in/yaml.v2"
 	"io/ioutil"
 	"rule_engine_by_go/utils"
@@ -50,12 +51,21 @@ func (e *engine) ReadRules() {
 
 func (e *engine) ResCheck() {
 
+	go func(c chan string) {
+		for {
+			fmt.Printf(<-c)
+		}
+
+	}(e.InPutC)
+
 }
 
-func (e *engine) Input() {
-
-}
-
-func (e *engine) OutPut() {
-
-}
+//func (e *engine) Input() {
+//
+//
+//
+//}
+//
+//func (e *engine) OutPut() {
+//
+//}
